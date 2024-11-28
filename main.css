@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(26, 26, 26);
+  color: #fff;
+  font-family: Tahoma;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.quotes-title-title {
+  font-size: 35px;
+  text-align: center;
+}
+
+.quotes-content-text {
+  font-size: 20px;
+  font-style: italic;
+}
+.quotes-content-author {
+  font-size: 16px;
+}
+
+.quotes-btn {
+  display: flex;
+}
+
+.btn {
+  text-align: center;
+  display: block;
+  padding: 20px;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.generate-btn {
+  background-color: blue;
+}
+
+.delete-btn {
+  background-color: rgb(255, 55, 0);
+}
+
+.favorites-qoutes-title {
+  font-size: 20px;
+  font-style: normal;
+}
+
+.favorites-qoutes-text {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.favorites-btn {
+  font-size: 50px;
+  color: #ffd700; /* Желтый цвет */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.active {
+  color: #ff0000;
+}
+
+.favorites-btn:hover {
+  color: #ffa500; /* Цвет при наведении */
+}
+
+.favorites-qoutes-item {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.favorites-qoute {
+  background-color: rgb(255, 255, 246);
+  width: 200px;
+  color: black;
+  font-size: 18px;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.remove-btn {
+  cursor: pointer;
+  color: #ffa500;
+  font-size: 30px;
+  font-weight: bold;
+}
+.remove-btn:hover {
+  color: darkred;
+}
