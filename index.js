@@ -20,6 +20,7 @@ const favoritesBtn = document.querySelector('.favorites-btn');
 const deleteBtn = document.querySelector('.delete-btn');
 let currentQute = null;
 
+
 // Показывает цитату
 function showQute(qoute) {
   const qouteAuthor = document.querySelector('.quotes-content-author');
@@ -32,23 +33,21 @@ function showQute(qoute) {
 
 // Выдает цитату из массива цитат
 const generateRandomQoutes = () => {
-  currentQute = generateRandomInt(qoutes);
-  showQute(currentQute);
-  localStorageSetItem(`currentQuteID`, currentQute.id);
-  updateFavoriteButton(currentQute, favoritesBtn);
+  const newQute = generateRandomInt(qoutes);
+  if (currentQute?.id !== newQute.id) {
+    currentQute = newQute;
+    showQute(currentQute);
+    localStorageSetItem('currentQuteID', currentQute.id);
+    updateFavoriteButton(currentQute, favoritesBtn);
+  }
 };
 
 // Добавляет/убирает цитату в избранное
 const addToFavorites = () => {
-  if (
-    document.querySelector(
-      `.favorites-qoute[data-qoute-id = '${currentQute.id}']`
-    )
-  ) {
-    hideFavoriteCard(currentQute, favoritesBtn);
-  } else {
-    showFavoriteCard(currentQute, favoritesBtn);
-  }
+  localStorageGetItem('favoriteQoute') &&
+  localStorageGetItem('favoriteQoute').find((q) => q.id === currentQute.id)
+    ? hideFavoriteCard(currentQute, favoritesBtn)
+    : showFavoriteCard(currentQute, favoritesBtn);
 };
 
 // Удаляет все цитаты из избранного
