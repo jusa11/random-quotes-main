@@ -61,7 +61,7 @@ function initFavoritesHandler(btn) {
         const quteId = card.getAttribute('data-qoute-id');
         const qoute = favoritesQutes.find((q) => q.id === +quteId);
         hideFavoriteCard(qoute, btn);
-
+				
         /* favoritesQutes = favoritesQutes.filter((q) => q.id !== qoute.id);
         localStorageSetItem(FAVORITE_QUTES, favoritesQutes);
         const cardQute = document.querySelector(
